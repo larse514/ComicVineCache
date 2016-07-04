@@ -5,6 +5,6 @@ Application uses AWS ElastiCache instance. Dashboard: https://us-west-2.console.
 
 Current configuration contains 3 nodes. 1 primary for writes and 2 as read only replicates
 
-Initial estimates of size are ~5mbs for the cache.  Seems really low, but will have to run tests
+Initial estimates of size are ~5mbs per instance cache + 5mbs for snapshot backups * 3 nodes is 30mb .  Seems really low, but will have to run tests
 
 
