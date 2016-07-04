@@ -7,4 +7,9 @@ Current configuration contains 3 nodes. 1 primary for writes and 2 as read only 
 
 Initial estimates of size are ~5mbs per instance cache + 5mbs for snapshot backups * 3 nodes is 30mb .  Seems really low, but will have to run tests
 
+Best practices:
+http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/BestPractices.html
+
+Setup tutorial:
+http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/GettingStarted.ConnectToCacheNode.html
 
