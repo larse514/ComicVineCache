@@ -14,3 +14,5 @@ Setup tutorial:
 http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/GettingStarted.ConnectToCacheNode.html
 
 Currently can only connect to redis server from AWS EC2 server with command src/redis-cli -h comicvinecache-001.br0imq.0001.usw2.cache.amazonaws.com -p 6379
+
+npm install --production
