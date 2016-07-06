@@ -10,13 +10,13 @@ router.get('/', function(req, res) {
 //method to getCache value
 router.get('/getCache', function(req, res) {
 	var key = req.query.key
-	console.log(key)
 	if(key){
 		cache.prototype.getCache(key, function(value){
-		 	res.send(value);
+		 	res.status(200).send(value);
 		})
+	}else{
+		throw(new Error("Bad Request"))
 	}
-	throw(new Error("Bad Request"))
 });
 //can i send non-json?
 router.post('/setCache', function(req, res) {
