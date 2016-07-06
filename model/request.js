@@ -1,13 +1,10 @@
 var schema = require('./schema/schema.js').cache;
 var _ = require('lodash');
-var stringify = require('node-stringify');
 
 //Define "constructor"
 var request = function(data){
 
 	this.data = this.sanitize(data);
-	//stringify the value param
-	this.data.value = stringify(this.data.value)
 };
 //define data for easy saving into backend
 request.prototype.data = {};
