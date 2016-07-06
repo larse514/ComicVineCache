@@ -1,4 +1,4 @@
-var schema = require('./schema/schema.js');
+var schema = require('./schema/schema.js').cache;
 var _ = require('lodash');
 
 //Define "constructor"
