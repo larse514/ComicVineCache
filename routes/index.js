@@ -30,7 +30,7 @@ router.post('/setCache', function(req, res) {
 	console.log(request)
 	if(request.isValid()){
 		cache.prototype.setCache(request.get('key'), request.get('value'), function(reply){
-			res.status(200).send({message:reply});
+			res.status(201).send({message:reply});
 
 		})
 	} else {
