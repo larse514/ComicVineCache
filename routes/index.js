@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
-var cache = require('../model/cache')
+var cache = require('../service/cache')
+var Request = require('../model/request')
 
 /* GET home page. */
 router.get('/', function(req, res) {
