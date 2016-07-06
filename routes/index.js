@@ -9,6 +9,7 @@ router.get('/', function(req, res) {
 });
 //method to getCache value
 router.get('/getCache', function(req, res) {
+	console.log(req)
 	cache.prototype.getCache(req.key, function(value){
 	 	res.send(value);
 	})
