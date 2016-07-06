@@ -35,7 +35,7 @@ request.prototype.isValid = function(){
 	//hand rolled way
 	if(this.data){
 		//lets just check key and value for now
-		if(this.data.key && this.date.value){
+		if(this.data.key && this.data.value){
 			return true;
 		}
 	}

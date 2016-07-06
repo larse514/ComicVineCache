@@ -31,4 +31,18 @@ describe('#sanatize test', function () {
         assert(request.data.badVal === undefined)
         assert(request.isValid() === false)
     });
+    it('getter', function () {
+        var request = new Request(body);
+        assert(request.get('value') === value)
+        assert(request.get('key') === key)
+        assert(request.isValid() === true)
+    });
+    it('setter', function () {
+        var request = new Request(body);
+
+        request.set('key','test')
+        assert(request.get('key') === 'test')
+
+        assert(request.isValid() === true)
+    });         
   });
