@@ -1,0 +1,7 @@
+{
+	"REDIS_CONFIG" : {
+		"HOST" : "comicvinecache-001.br0imq.0001.usw2.cache.amazonaws.com",
+		"PORT" : 6379
+	}
+
+}
