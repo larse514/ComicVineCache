@@ -12,7 +12,11 @@ router.get('/getCache', function(req, res) {
 	var key = req.query.key
 	if(key){
 		cache.prototype.getCache(key, function(value){
-		 	res.status(200).send(value);
+			if(value){
+		 		res.status(200).send(value);
+		 	} else {
+		 		res.status(404).send("not found")
+		 	}
 		})
 	}else{
 		throw(new Error("Bad Request"))
