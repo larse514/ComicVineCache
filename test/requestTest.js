@@ -8,7 +8,19 @@ describe('#sanatize test', function () {
 
     it('value is still here', function () {
     	var request = new Request(body);
-    	assert(request.data.value !== null)
+        //make sure it's not null
+        assert(request.data.value !== null)
+    });
+    it('results are here after eval', function () {
+        var request = new Request(body);
+        //make sure it's not null
+        assert(request.data.value !== null)
+        //also, we need to eval after
+        assert(eval(request.data.value).results.length == value.results.length)
+    });
+    it('value is a string', function () {
+        var request = new Request(body);
+        assert(typeof request.data.value == 'string')
     });
     it('key is still there', function () {
     	var request = new Request(body);
