@@ -15,19 +15,25 @@ router.get('/getCache', function(req, res) {
 			if(value){
 		 		res.status(200).send(value);
 		 	} else {
-		 		res.status(404).send("not found")
+		 		res.status(404).send({message:"not found"})
 		 	}
 		})
 	}else{
-		throw(new Error("Bad Request"))
+		res.status(400).send({message:"bad request"})
 	}
 });
 //can i send non-json?
 router.post('/setCache', function(req, res) {
 	var request = new Request(req.body)
-	cache.prototype.setCache(request.get('key'), request.get('value'), function(reply){
-		res.status(200).send({message:reply});
+	console.log(request)
+	if(request.isValid()){
+		cache.prototype.setCache(request.get('key'), request.get('value'), function(reply){
+			res.status(200).send({message:reply});
 
-	})
+		})
+	} else {
+		res.status(400).send({message:"bad request"})
+
+	}
 });
 module.exports = router;
