@@ -5,7 +5,7 @@ var Request = require('../model/request')
 
 /* GET home page. */
 router.get('/', function(req, res) {
-  res.render('index', { title: 'Health Check' });
+  res.send({ title: 'Health Check' });
 });
 //method to getCache value
 router.get('/getCache', function(req, res) {
