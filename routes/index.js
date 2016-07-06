@@ -14,7 +14,7 @@ router.get('/getCache', function(req, res) {
 		cache.prototype.getCache(key, function(value){
 			if(value){
 				//need to run eval to make sure it's an object
-		 		res.status(200).send(eval(value));
+		 		res.status(200).send(value);
 		 	} else {
 		 		res.status(404).send({message:"not found"})
 		 	}
