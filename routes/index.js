@@ -11,7 +11,7 @@ router.get('/', function(req, res) {
 router.get('/getCache', function(req, res) {
 	var key = req.query.key
 	if(key){
-		cache.prototype.getCache(key, function(value){
+		cache.prototype.getCache(key.data, function(value){
 			if(value){
 				//need to run eval to make sure it's an object
 		 		res.status(200).send({value:value});
