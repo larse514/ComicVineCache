@@ -1,9 +1,10 @@
 {
-  "name": "ComicVineCache",
+  "name": "rediscache",
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "test": "mocha --reporter spec test"
   },
   "dependencies": {
     "body-parser": "~1.13.2",
@@ -19,5 +20,27 @@
     "rewire": "^2.5.2",
     "serve-favicon": "~2.3.0",
     "sinon": "^1.17.4"
-  }
+  },
+  "description": "Service to cache 3rd party requests for performance and consumption purposes",
+  "main": "app.js",
+  "directories": {
+    "test": "test"
+  },
+  "devDependencies": {
+    "mocha": "^2.5.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/larse514/ComicVineCache.git"
+  },
+  "keywords": [
+    "cache",
+    "redis"
+  ],
+  "author": "Vernon Solutions",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/larse514/ComicVineCache/issues"
+  },
+  "homepage": "https://github.com/larse514/ComicVineCache#readme"
 }
