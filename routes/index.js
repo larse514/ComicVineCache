@@ -10,7 +10,7 @@ router.get('/', function(req, res) {
 //method to getCache value
 router.get('/getCache', function(req, res) {
 	var key = req.query.key
-	if(key){
+	if(typeof key === "string"){
 		cache.prototype.getCache(key, function(value){
 			if(value){
 				//need to run eval to make sure it's an object
