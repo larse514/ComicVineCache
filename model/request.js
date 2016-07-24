@@ -35,7 +35,7 @@ request.prototype.isValid = function(){
 	//hand rolled way
 	if(this.data){
 		//lets just check key and value for now
-		if(this.data.key && this.data.value){
+		if(this.data.key && typeof this.data.value === "string"){
 			return true;
 		}
 	}
