@@ -10,7 +10,7 @@ cache.prototype.getCache = function(key, next){
 		//if there was an error throw it
 		if(err) throw err
 		//otherwise continue processing 
-		next(reply)
+		return next(reply)
 	});
 }
 
@@ -19,7 +19,7 @@ cache.prototype.setCache = function(key, value, next){
 		//if there was an error throw it
 		if(err) throw err
 		//otherwise continue processing 
-		next(reply)
+		return next(reply)
 	});
 }
 
