@@ -9,7 +9,13 @@ cache.prototype.getCache = function(key, next){
 	client.get(key, function(err, reply) {
 		//if there was an error throw it
 		if(err) throw err
-		//otherwise continue processing 
+		//otherwise continue processing
+		try{
+			reply = JSON.parse(reply)
+		} 
+		catch(e){
+			new Error(500, "Internal Server Error")
+		}
 		return next(reply)
 	});
 }
