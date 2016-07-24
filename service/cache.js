@@ -7,7 +7,9 @@ var cache =  function() {
 };
 
 cache.prototype.getCache = function(key, next){
+	console.log(key)
 	var hash = crypto.createHash('md5').update(key).digest('hex');
+	console.log(hash)
 	client.get(hash, function(err, reply) {
 		//if there was an error throw it
 		if(err) throw err
