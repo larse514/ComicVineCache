@@ -25,7 +25,10 @@ cache.prototype.getCache = function(key, next){
 }
 
 cache.prototype.setCache = function(key, value, next){
+	console.log(key)
+	console.log(value)
 	var hash = crypto.createHash('md5').update(key).digest('hex');
+	console.log(hash)
 	client.set(hash, value, function(err, reply) {
 		//if there was an error throw it
 		if(err) throw err
