@@ -1,4 +1,5 @@
 var client = require('../client/RedisClient.js');
+var crypto = require('crypto');
 
 //constructor
 var cache =  function() {
@@ -6,7 +7,8 @@ var cache =  function() {
 };
 
 cache.prototype.getCache = function(key, next){
-	client.get(key, function(err, reply) {
+	var hash = crypto.createHash('md5').update(key).digest('hex');
+	client.get(hash, function(err, reply) {
 		//if there was an error throw it
 		if(err) throw err
 		//otherwise continue processing
@@ -21,7 +23,8 @@ cache.prototype.getCache = function(key, next){
 }
 
 cache.prototype.setCache = function(key, value, next){
-	client.set(key, value, function(err, reply) {
+	var hash = crypto.createHash('md5').update(key).digest('hex');
+	client.set(hash, value, function(err, reply) {
 		//if there was an error throw it
 		if(err) throw err
 		//otherwise continue processing 
