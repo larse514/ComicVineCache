@@ -13,7 +13,7 @@ router.get('/getCache', function(req, res) {
 	if(key){
 		cache.prototype.getCache(key, function(value){
 			if(value){
-				//need to run eval to make sure it's an object
+				//todo-factor out response data
 		 		res.status(200).send({value:value});
 		 	} else {
 		 		res.status(404).send({message:"not found"})
@@ -25,9 +25,7 @@ router.get('/getCache', function(req, res) {
 });
 //can i send non-json?
 router.post('/setCache', function(req, res) {
-	console.log(req.body)
 	var request = new Request(req.body)
-	console.log(request)
 	if(request.isValid()){
 		cache.prototype.setCache(request.get('key'), request.get('value'), function(reply){
 			res.status(201).send({message:reply});
