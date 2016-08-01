@@ -1,6 +1,6 @@
 {
 	"REDIS_CONFIG" : {
-		"HOST" : "motherboxx-cache.br0imq.0001.usw2.cache.amazonaws.com",
+		"HOST" : "motherboxxcache.br0imq.0001.usw2.cache.amazonaws.com",
 		"PORT" : 6379
 	}
 
